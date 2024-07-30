@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armaduras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Armadura</a></li>
+            <li><a href="armas.html">Armas</a></li>
+            <li><a href="equipamentos.html">Equipamentos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="arreios.html">Arreios, Selas e Veículos de Tração</a></li>
+            <li><a href="montaria.html">Montaria</a></li>
+            <li><a href="veiculosaquaticos.html">Veículos Aquáticos</a></li>
+            <li><a href="inventory.html">Inventário</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Armaduras</h1>
+        <div class="po-section">
+            <h2 id="user-info"></h2>
+            <img src="images/po_icon.png" alt="Ícone de PO">
+        </div>
+        <p id="user-info"></p>
+        <form id="filter-form" class="filter-form">
+            <label for="category">Categoria:</label>
+            <select id="category">
+                <option value="all">Todas</option>
+                <option value="categoria1">Armadura Leve</option>
+                <option value="categoria2">Armadura Média</option>
+                <option value="categoria3">Armadura Pesada</option>
+            </select>
+
+            <label for="price">Preço:</label>
+            <select id="price">
+                <option value="all">Todos</option>
+                <option value="low">Menos de 100 Po</option>
+                <option value="medium">100PO - 1000PO</option>
+                <option value="high">Mais de 1000PO</option>
+            </select>
+
+            <label for="classe">Classe de Armadura (CA):</label>
+            <select id="classe">
+                <option value="all">Todas</option>
+                <option value="9-">9-</option>
+                <option value="10-13">10-13</option>
+                <option value="14-18">14-18</option>
+                <option value="19+">19+</option>
+            </select>
+
+            <label for="rating">Peso:</label>
+            <select id="rating">
+                <option value="all">Todas</option>
+                <option value="1">-5kg</option>
+                <option value="2">5kg-15kg</option>
+                <option value="3">16KG+</option>
+            </select>
+
+            <label for="availability">Furtividade:</label>
+            <select id="availability">
+                <option value="all">Todas</option>
+                <option value="desvantagem">Desvantagem</option>
+                <option value="vantagem">Não Afeta</option>
+            </select>
+
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </form>
+        <div id="product-list" class="product-list">
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+        <div id="inventory-list" class="inventory-list">
+            <!-- O inventário será inserido aqui pelo JavaScript -->
+        </div>
+    </div>
+    <script>
+        // Função para atualizar a quantidade de PO
+        function updatePOAmount(amount) {
+            document.getElementById('po-amount').textContent = amount;
+        }
+    
+        // Exemplo de como você poderia definir o valor inicial de PO
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialPO = 1000; // Exemplo: obter valor de uma fonte de dados
+            updatePOAmount(initialPO);
+        });
+    </script>    
+    <script src="script.js"></script>
+</body>
+</html>

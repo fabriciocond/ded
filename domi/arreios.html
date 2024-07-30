@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreios, Selas e Veículos de Tração</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Armadura</a></li>
+            <li><a href="armas.html">Armas</a></li>
+            <li><a href="equipamentos.html">Equipamentos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="arreios.html">Arreios, Selas e Veículos de Tração</a></li>
+            <li><a href="montaria.html">Montaria</a></li>
+            <li><a href="veiculosaquaticos.html">Veículos Aquáticos</a></li>
+            <li><a href="inventory.html">Inventário</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Arreios, Selas e Veículos de Tração</h1>
+        <div id="user-info"></div>
+        <form id="filter-form" class="filter-form">
+            <label for="price">Preço:</label>
+            <select id="price">
+                <option value="all">Todos</option>
+                <option value="low">Menor que 100 PO</option>
+                <option value="medium">Entre 100 PO e 1000 PO</option>
+                <option value="high">Maior que 1000 PO</option>
+            </select>
+            <label for="rating">Peso:</label>
+            <select id="rating">
+                <option value="all">Todos</option>
+                <option value="1">1 a 5 kg</option>
+                <option value="2">5 a 15 kg</option>
+                <option value="3">15+ kg</option>
+            </select>
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </form>
+        <div id="product-list" class="product-list"></div>
+        <h2>Inventário do Usuário</h2>
+        <div id="inventory-list" class="inventory-list"></div>
+    </div>
+    <script src="arreios.js"></script>
+</body>
+</html>
+
