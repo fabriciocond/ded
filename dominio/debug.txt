@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Deimon",
+        "password": "password1",
+        "money": 1015,
+        "inventory": []
+    },
+    {
+        "username": "Mazzoni",
+        "password": "password1",
+        "money": 1200,
+        "inventory": []
+    },
+    {
+        "username": "Karin",
+        "password": "password1",
+        "money": 800,
+        "inventory": []
+    },
+    {
+        "username": "Crow",
+        "password": "password1",
+        "money": 800,
+        "inventory": []
+    },
+    {
+        "username": "John",
+        "password": "password1",
+        "money": 681,
+        "inventory": []
+    }
+]

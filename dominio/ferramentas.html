@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Armadura</a></li>
+            <li><a href="armas.html">Armas</a></li>
+            <li><a href="equipamentos.html">Equipamentos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="arreios.html">Arreios, Selas e Veículos de Tração</a></li>
+            <li><a href="montaria.html">Montaria</a></li>
+            <li><a href="veiculosaquaticos.html">Veículos Aquáticos</a></li>
+            <li><a href="inventory.html">Inventário</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Ferramentas</h1>
+        <div id="user-info"></div>
+        <form id="filter-form" class="filter-form">
+            <label for="category">Categoria:</label>
+            <select id="category">
+                <option value="all">Todas</option>
+                <option value="categoria1">Categoria 1</option>
+                <option value="categoria2">Categoria 2</option>
+                <option value="categoria3">Categoria 3</option>
+            </select>
+
+            <label for="price">Preço:</label>
+            <select id="price">
+                <option value="all">Todos</option>
+                <option value="low">Baixo (menos de 100 PO)</option>
+                <option value="medium">Médio (100-1000 PO)</option>
+                <option value="high">Alto (mais de 1000 PO)</option>
+            </select>
+
+            <label for="rating">Peso:</label>
+            <select id="rating">
+                <option value="all">Todos</option>
+                <option value="1">Leve (até 5 kg)</option>
+                <option value="2">Médio (5-15 kg)</option>
+                <option value="3">Pesado (mais de 15 kg)</option>
+            </select>
+
+            <label for="availability">Disponibilidade:</label>
+            <select id="availability">
+                <option value="all">Todas</option>
+                <option value="desvantagem">Desvantagem</option>
+                <option value="vantagem">Vantagem</option>
+            </select>
+
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </form>
+        <div id="product-list" class="product-list"></div>
+        <h2>Inventário</h2>
+        <div id="inventory-list" class="inventory-list"></div>
+    </div>
+    <script src="ferramentas.js"></script>
+</body>
+</html>

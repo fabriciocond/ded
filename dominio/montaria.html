@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armaduras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Armadura</a></li>
+            <li><a href="armas.html">Armas</a></li>
+            <li><a href="equipamentos.html">Equipamentos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="arreios.html">Arreios, Selas e Veículos de Tração</a></li>
+            <li><a href="montaria.html">Montaria</a></li>
+            <li><a href="veiculosaquaticos.html">Veículos Aquáticos</a></li>
+            <li><a href="inventory.html">Inventário</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Montarias</h1>
+        <form id="filter-form" class="filter-form">
+
+            <label for="price">Preço:</label>
+            <select id="price">
+                <option value="all">Todos</option>
+                <option value="low">Menos de 100 Po</option>
+                <option value="medium">100PO - 1000PO</option>
+                <option value="high">Mais de 1000PO</option>
+            </select>
+
+            <label for="rating">Capacidade de Carga:</label>
+            <select id="rating">
+                <option value="all">Todas</option>
+                <option value="1">-150kg</option>
+                <option value="2">150kg-500kg</option>
+                <option value="3">500kg+</option>
+            </select>
+
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </form>
+        <div id="product-list" class="product-list">
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+        <h2>Inventário do Usuário</h2>
+        <div id="inventory-list" class="inventory-list"></div>
+    </div>
+    <script src="montaria.js"></script>
+</body>
+</html>
