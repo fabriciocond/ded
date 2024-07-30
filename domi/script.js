@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user.money >= product.price) {
             user.money -= product.price;
             const existingItem = user.inventory.find(item => item.name === product.name);
-
+    
             if (existingItem) {
                 existingItem.count++;
             } else {
@@ -483,31 +483,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     count: 1
                 });
             }
-
+    
             alert(`Você comprou ${product.name} por ${product.value}`);
             localStorage.setItem('loggedInUser', JSON.stringify(user));
-            document.getElementById('user-info').textContent = `Logado como ${user.username} com ${user.money} PO`;
+            document.getElementById('user-info').textContent = `${user.username} possui ${user.money} PO`;
             updateInventoryList(user.inventory);
-
+    
             // Envia os dados para o PHP
-            fetch('write.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `data=${encodeURIComponent(JSON.stringify(user))}`
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-            });
+            updateServerDebugFile(user);
         } else {
-            alert('Saldo insuficiente!');
+            alert('Você não tem dinheiro suficiente para comprar este item.');
         }
+  };
+    
+    const updateServerDebugFile = (user) => {
+    const data = {
+        username: user.username,
+        money: user.money,
+        inventory: user.inventory.map(item => ({
+            name: item.name,
+            count: item.count
+        }))
     };
+
+    fetch('write.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'data=' + encodeURIComponent(JSON.stringify(data))
+    })
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.error('Erro:', error));
+};
+
 
     displayProducts(products);
 
