@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Armadura</a></li>
+            <li><a href="armas.html">Armas</a></li>
+            <li><a href="equipamentos.html">Equipamentos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="arreios.html">Arreios, Selas e Veículos de Tração</a></li>
+            <li><a href="montaria.html">Montaria</a></li>
+            <li><a href="veiculosaquaticos.html">Veículos Aquáticos</a></li>
+            <li><a href="inventory.html">Inventário</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Armas</h1>
+        <form id="filter-form" class="filter-form">
+            <label for="category">Categoria:</label>
+            <select id="category">
+                <option value="all">Todas</option>
+                <option value="categoria1">Armas Simples Corpo-a-Corpo</option>
+                <option value="categoria2">Armas Simples à Distância</option>
+                <option value="categoria3">Armas Marciais Corpo-a-Corpo</option>
+                <option value="categoria4">Armas Marciais à Distância</option>
+            </select>
+
+            <label for="price">Preço:</label>
+            <select id="price">
+                <option value="all">Todos</option>
+                <option value="low">Menos de $50</option>
+                <option value="medium">$50 - $100</option>
+                <option value="high">Mais de $100</option>
+            </select>
+
+            <label for="brand">Dano:</label>
+            <select id="brand">
+                <option value="all">Todas</option>
+                <option value="1">1d4</option>
+                <option value="2">1d6</option>
+                <option value="3">1d8</option>
+                <option value="4">+1d8</option>
+            </select>
+
+            <label for="rating">Peso:</label>
+            <select id="rating">
+                <option value="all">Todas</option>
+                <option value="1">-5kg</option>
+                <option value="2">5kg-15kg</option>
+                <option value="3">16KG+</option>
+            </select>
+
+            <button type="button" onclick="filterProducts()">Filtrar</button>
+        </form>
+        <div id="product-list" class="product-list">
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+        <div id="inventory-list" class="inventory-list">
+            <!-- O inventário será inserido aqui pelo JavaScript -->
+        </div>
+    </div>
+    <script src="armas.js"></script>
+</body>
+</html>
