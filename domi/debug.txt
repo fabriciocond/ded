@@ -1,61 +1,32 @@
 [
     {
-        "username": "user1",
+        "username": "Deimon",
         "password": "password1",
-        "money": 122.5,
-        "inventory": [
-            {
-                "name": "Armadura de Camis\u00e3o de Malha",
-                "image": "images\/armadura5.jpg",
-                "description": "Armadura M\u00e9dia",
-                "value": "50 PO",
-                "brand": "13 + modificador de DES (max+2)",
-                "peso": "10kg",
-                "count": 1
-            },
-            {
-                "name": "Meia-Armadura",
-                "image": "images\/armadura8.jpg",
-                "description": "Armadura M\u00e9dia",
-                "value": "750 PO",
-                "brand": "15 + modificador de DES (max+2)",
-                "peso": "20kg",
-                "count": 1
-            },
-            {
-                "name": "Armadura de Couro",
-                "image": "images\/armadura2.jpg",
-                "description": "Armadura Leve",
-                "value": "10 PO",
-                "brand": "11 + modificador de DES",
-                "peso": "5kg",
-                "count": 1
-            },
-            {
-                "name": "Armadura de Couro Batido",
-                "image": "images\/armadura3.jpg",
-                "description": "Armadura Leve",
-                "value": "45 PO",
-                "brand": "12 + modificador de DES",
-                "peso": "6,5kg",
-                "count": 1
-            }
-        ]
+        "money": 1015,
+        "inventory": []
     },
     {
-        "username": "user2",
-        "password": "password2",
-        "money": 300,
-        "inventory": [
-            {
-                "name": "Armadura de Couro",
-                "image": "images\/armadura2.jpg",
-                "description": "Armadura Leve",
-                "value": "10 PO",
-                "brand": "11 + modificador de DES",
-                "peso": "5kg",
-                "count": 1
-            }
-        ]
+        "username": "Mazzoni",
+        "password": "password1",
+        "money": 1200,
+        "inventory": []
+    },
+    {
+        "username": "Karin",
+        "password": "password1",
+        "money": 800,
+        "inventory": []
+    },
+    {
+        "username": "Crow",
+        "password": "password1",
+        "money": 800,
+        "inventory": []
+    },
+    {
+        "username": "John",
+        "password": "password1",
+        "money": 681,
+        "inventory": []
     }
-]Novos dados para adicionar ao arquivo debug.txt
+]
