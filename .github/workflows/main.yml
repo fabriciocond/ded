@@ -30,8 +30,8 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add debug.txt
-        git commit -m "Update domi/debug.txt via GitHub Actions"
+        git add domi/debug.txt
+        git commit -m "Update domi/debug.txt via GitHub Actions" || echo "No changes to commit"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
