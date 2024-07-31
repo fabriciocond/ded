@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const debugFilePath = path.join(__dirname, 'domi/debug.txt');
+const debugFilePath = path.join(__dirname, 'dominio/debug.txt');
 
 // Dados novos para substituir o conteúdo atual
 const newData = "Novos dados para substituir o conteúdo do arquivo debug.txt\n";
