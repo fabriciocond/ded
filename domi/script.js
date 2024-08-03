@@ -489,23 +489,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('user-info').textContent = `Logado como ${user.username} com ${user.money} PO`;
             updateInventoryList(user.inventory);
 
-            // Atualiza o arquivo debug.txt
-            updateDebugFile(user);
+            // Envia os dados para o PHP
+            fetch('write.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `data=${encodeURIComponent(JSON.stringify(user))}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log(result);
+                alert(result);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro: ' + error);
+            });
         } else {
-            alert('Você não tem dinheiro suficiente para comprar este item.');
+            alert('Dinheiro insuficiente');
         }
-    };
-
-    const updateDebugFile = (user) => {
-        const debugContent = JSON.stringify(user, null, 2);
-        fetch('update_debug.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: debugContent
-        })
-        .then(response => response.text())
-        .then(data => console.log('Debug file updated:', data))
-        .catch(error => console.error('Error updating debug file:', error));
     };
 
     displayProducts(products);
@@ -564,17 +567,3 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-const downloadDebugFile = () => {
-    fetch('debug.txt')
-        .then(response => response.text())
-        .then(text => {
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'debug.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        })
-        .catch(error => console.error('Error downloading debug file:', error));
-};
